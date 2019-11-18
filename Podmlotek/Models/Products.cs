@@ -8,7 +8,7 @@ namespace Podmlotek.Models
 	public class Products
 	{
 		public int ProductsId { get; set; }
-		public int CategoriesId { get; set; }
+		public int SubcategoriesId { get; set; }
 		public int UsersId { get; set; }
 		public string Item { get; set; }
 		public DateTime DateAdded { get; set; }
@@ -19,7 +19,12 @@ namespace Podmlotek.Models
 		public bool Hidden { get; set; }
 		public string ShortDescription { get; set; }
 
-		public virtual Categories Categories { get; set; }
+		public virtual Subcategories Subcategories { get; set; }
 		public virtual Users Users { get; set; }
+	}
+	public enum Estate
+	{ 
+		New,
+		Used
 	}
 }

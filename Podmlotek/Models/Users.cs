@@ -8,7 +8,7 @@ namespace Podmlotek.Models
 {
 	public class Users
 	{
-		public int UserId { get; set; }
+		public int UsersId { get; set; }
 		[Required(ErrorMessage = "Wprowadź login")]
 		public string Login { get; set; }
 		[Required(ErrorMessage = "Wprowadź hasło")]

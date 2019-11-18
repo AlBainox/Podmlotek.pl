@@ -5,9 +5,11 @@ using System.Web;
 
 namespace Podmlotek.Models
 {
-	public class Categories
+	public class Subcategories
 	{
+		public int SubcategoriesId { get; set; }
 		public int CategoriesId { get; set; }		
-		public string Name { get; set; }		
+		public string Name { get; set; }
+		public virtual Categories Categories { get; set; }		
 	}
 }

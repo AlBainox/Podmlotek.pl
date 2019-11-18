@@ -13,7 +13,6 @@ namespace Podmlotek.Models
 		public decimal OrderValue { get; set; }
 		public List<OrderItem> OrderItems { get; set; }
 		public virtual Users Users { get; set; }
-
 	}
 	public enum OrderStatus
 	{ 

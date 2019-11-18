@@ -14,8 +14,5 @@ namespace Podmlotek.Models
 		public int OrderPrice { get; set; }
 		public virtual Products Product { get; set; }
 		public virtual Orders Order { get; set; }
-
-
-
 	}
 }
