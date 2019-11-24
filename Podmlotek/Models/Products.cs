@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -17,14 +18,12 @@ namespace Podmlotek.Models
 		public decimal Price { get; set; }
 		public bool Bestseller { get; set; }
 		public bool Hidden { get; set; }
+		[StringLength(300)]
 		public string ShortDescription { get; set; }
+
 
 		public virtual Subcategories Subcategories { get; set; }
 		public virtual Users Users { get; set; }
 	}
-	public enum Estate
-	{ 
-		New,
-		Used
-	}
+	
 }

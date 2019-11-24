@@ -1,0 +1,33 @@
+﻿@model Podmlotek.Models.Products
+@using Podmlotek.Infrastructure
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<main>
+	<article>
+		<section>
+			<header>
+				<h2>
+					@Model.Item
+				</h2>
+			</header>
+			<img class="picture" src="@Url.PicturesPath(Model.Picture)"/>
+			<div id="description">
+				@Model.Description
+			</div>
+			<div>
+				Cena: <span> @Model.Price zł</span>
+			</div>
+			<div class="buttons">
+				<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = Model.ProductsId })"> 
+				Dodaj do koszyka
+				</a>
+			</div>
+
+		</section>
+	</article>
+</main>

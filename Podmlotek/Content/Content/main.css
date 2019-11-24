@@ -1,0 +1,398 @@
+body
+{
+	margin: 0;
+	background-color: #2F3336;
+	color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+h1.logo
+{
+	font-size: 44px;	
+	font-weight: 700;
+	color: #dddddd;
+	text-align: center;
+	text-transform:uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+#pasek
+{
+	background-color: #CD7F32;
+	text-align: right;
+	padding: 10px;
+	font-size: 18px;
+	min-height: 38px;
+	line-height: 200%;
+	
+}
+#pasek a
+{
+	color: #1c74b2;
+	text-decoration: none;	
+}
+#pasek a:hover
+{
+	color: #FFBF00;	
+}
+#topnav
+{
+	background-color: #1c74b2;
+	text-align: center;
+}
+.menu
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	font-size: 18px;
+	min-height: 38px;
+	line-height: 200%;
+}
+.menu > li
+{
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-right: 1px dashed #02a24b;
+}
+.menu > li:first-child
+{
+		border-left: 1px dashed #02a24b;
+}
+.menu a
+{
+	color: #afff;
+	text-decoration: none;
+}
+.menu a:hover
+{
+	color: #02a24b;	
+}
+.categories
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 950px;
+	text-align: center;
+	padding: 0;
+}
+h1
+{
+	font-size: 44px;
+	font-weight: 400;
+	color: #39a5fi;
+	margin-bottom: 20px;
+}
+.author
+{
+	display: inline-block;
+}
+.author a
+{
+	opacity: 0.9;
+}
+.author a:hover
+{
+	opacity: 1;
+}
+figure
+{
+	margin: 8px;
+	padding:0;
+}
+figcaption
+{
+	margin: 8px;
+	padding:0;
+}
+.entries
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 950px;
+	text-align: center;
+	padding-top: 0;
+	padding-bottom: 80px;
+	margin-top: 40px;
+}
+#newest
+{
+	background-color:#191d21;	
+}
+.entry
+{
+	background-color: #222930;
+	padding: 10px;
+	text-align: justify;
+	margin-top: 40px;
+	border-radius: 5px;
+}
+.entryimg
+{
+	display: inline-block;
+	margin-left: 30px;
+	width: 120px;
+}
+.entryimg img
+{
+	width: 90px;
+	height:90px;
+}
+.entrytxt
+{
+	display: inline-block;
+	width: 750px;
+	font-size: 15px;
+	
+}
+h2
+{
+	font-size: 20px;
+	font-weight: 400;
+	color: #39a3fi;
+}
+.kontakt
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 950px;
+	text-align: center;
+	padding-bottom: 70px;
+	margin-bottom: 50px;
+}
+ul.duzaListaKursy li {	
+	margin-left: 45px;
+    width: 333.33px;
+    height: 333.33px;
+}
+
+    ul.duzaListaKursy li a h1 {
+        top: 45%;
+    }
+
+    ul.duzaListaKursy li a:hover h1 {
+        top: 46%;
+    }
+
+ul.MalaListaKategorii li {
+    width: 256px;
+    height: 256px;
+}
+
+    ul.MalaListaKategorii li a h1 {
+        top: 40%;
+    }
+
+    ul.MalaListaKategorii li a:hover h1 {
+        top: 41%;
+    }
+
+
+ul.KursyTrzyKolumny {	
+	
+    overflow: hidden;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+    ul.KursyTrzyKolumny li {
+		
+        float: left;
+        position: relative;
+        /*opacity: 0.2;*/
+    }
+
+        ul.KursyTrzyKolumny li article {
+			
+            height: 100%;
+        }
+
+        ul.KursyTrzyKolumny li a.dodajDoKoszykaLink {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+            ul.KursyTrzyKolumny li a.dodajDoKoszykaLink img {
+                z-index: 2;
+                position: relative;
+                vertical-align: top;
+            }
+
+        ul.KursyTrzyKolumny li a.kursSzczegolyLink {
+            display: block;
+            height: 100%;
+        }
+
+        ul.KursyTrzyKolumny li a h1 {
+            background-color: rgba(255, 255, 255, 0.2);
+            vertical-align: central;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            font-weight: normal;
+            /* More intensive album title */
+            /* font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI'; */
+            -webkit-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        ul.KursyTrzyKolumny li a:hover h1 {
+            background-color: rgba(255, 255, 255, 0.85);
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        ul.KursyTrzyKolumny li a img.kurs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            -webkit-transition: opacity 0.5s ease;
+            -o-transition: opacity 0.5s ease;
+            -moz-transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease;
+        }
+
+        ul.KursyTrzyKolumny li a:hover img.kurs {
+            opacity: 0.8;
+            -webkit-transition: opacity 1s ease;
+            -o-transition: opacity 1s ease;
+            -moz-transition: opacity 1s ease;
+            transition: opacity 1s ease;
+        }
+
+ul.duzaListaKursy-bottom li {	
+		
+    width: 333.33px;
+    height: 333.33px;
+    font-size: 15px;
+}
+
+    ul.duzaListaKursy-bottom li a h1 {
+		horizontal-align: central;
+        bottom: 0px;
+    }
+
+
+ul.TrzyKolumnyList {
+		
+    overflow: hidden;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+    ul.TrzyKolumnyList li {
+		
+        float: left;
+        position: relative;
+        /*opacity: 0.2;*/
+    }
+
+        ul.TrzyKolumnyList li article {
+			
+            height: 100%;
+        }
+
+
+        ul.TrzyKolumnyList li a.kursSzczegolyLink {
+            display: block;
+            height: 100%;
+        }
+
+        ul.TrzyKolumnyList li a h1 {
+            background-color: rgba(255, 255, 255, 0);
+            vertical-align: central;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            font-weight: normal;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul.TrzyKolumnyList li a:hover h1 {
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul.TrzyKolumnyList li a img.kurs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        ul.TrzyKolumnyList li a:hover img.kurs {
+        }
+
+.manageHeader {
+    margin-bottom: 30px;
+}
+div.bestsellerFlag {
+    background-image: url(Images/bestseller.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.newFlag {
+    background-image: url(Images/new.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.picture {
+	float: left;
+}
+#description {
+	display: block;
+}
+.orderButton {
+	height: 40px;
+	background-color: #CD7F32;
+	color: #dfdfdf;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 38px;
+	padding: 2px 15px 2px 15px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+  #footer
+{
+	background-color: #CD7F32;
+	text-align: center;
+	padding: 10px;
+	font-size: 18px;
+	min-height: 38px;
+	line-height: 200%;
+	
+}
+#footer a
+{
+	color: #1c74b2;
+	text-decoration: none;	
+} 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Podmlotek.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,21 +12,16 @@ namespace Podmlotek.Controllers
 		Context db = new Context();
 		public ActionResult Index()
 		{
-			return View();
-		}
+			var bestseller = db.Product.Where(p => p.Bestseller && !p.Hidden).Take(3);
+			var nowosci = db.Product.Where(p => !p.Hidden).OrderByDescending(p=>p.DateAdded).Take(3);
 
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
+			HomeViewModel vm = new HomeViewModel()
+			{
+				Bestsellers = bestseller,
+				News = nowosci,
+			};
 
-			return View();
-		}
-
-		public ActionResult Contact()
-		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
-		}
+			return View(vm);
+		}		
 	}
 }

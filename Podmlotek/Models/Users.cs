@@ -10,7 +10,9 @@ namespace Podmlotek.Models
 	{
 		public int UsersId { get; set; }
 		[Required(ErrorMessage = "Wprowadź login")]
+		
 		public string Login { get; set; }
+		public Role role { get; set; }
 		[Required(ErrorMessage = "Wprowadź hasło")]
 		public string Password { get; set; }
 		[Required(ErrorMessage = "Wprowadz imie")]

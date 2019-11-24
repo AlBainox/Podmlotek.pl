@@ -129,10 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AppConfig.cs" />
+    <Compile Include="Infrastructure\UrlHelpers.cs" />
+    <Compile Include="Infrastructure\UserManager.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Migrations\201911181636016_Changes.cs" />
     <Compile Include="Migrations\201911181636016_Changes.Designer.cs">
@@ -146,6 +151,14 @@
     <Compile Include="Migrations\201911181808118_change3.Designer.cs">
       <DependentUpon>201911181808118_change3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911241042292_changes 4.cs" />
+    <Compile Include="Migrations\201911241042292_changes 4.Designer.cs">
+      <DependentUpon>201911241042292_changes 4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911241604138_Add role.cs" />
+    <Compile Include="Migrations\201911241604138_Add role.Designer.cs">
+      <DependentUpon>201911241604138_Add role.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\OrderItem.cs" />
@@ -154,12 +167,36 @@
     <Compile Include="Models\Subcategories.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Content\Images\ajax-loader.png" />
+    <Content Include="Content\Content\Images\baner.png" />
+    <Content Include="Content\Content\Images\bestseller.png" />
+    <Content Include="Content\Content\Images\dommaly.png" />
+    <Content Include="Content\Content\Images\footer-cd.png" />
+    <Content Include="Content\Content\Images\icons-18-black.png" />
+    <Content Include="Content\Content\Images\icons-18-white.png" />
+    <Content Include="Content\Content\Images\icons-36-black.png" />
+    <Content Include="Content\Content\Images\icons-36-white.png" />
+    <Content Include="Content\Content\Images\koszyk-details.png" />
+    <Content Include="Content\Content\Images\koszyk.png" />
+    <Content Include="Content\Content\Images\koszyk_white.png" />
+    <Content Include="Content\Content\Images\logo.png" />
+    <Content Include="Content\Content\Images\new.png" />
+    <Content Include="Content\Content\Images\searchlogo.png" />
+    <Content Include="Content\Content\Images\upload.png" />
+    <Content Include="Content\Content\Index.html" />
+    <Content Include="Content\Content\main.css" />
+    <Content Include="Content\Content\Pictures\laptop.png" />
+    <Content Include="Content\Content\Pictures\rower.jpg" />
+    <Content Include="Content\Content\Pictures\telefon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -186,11 +223,10 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Account\Logining.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911181808118_change3.resx">
       <DependentUpon>201911181808118_change3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911241042292_changes 4.resx">
+      <DependentUpon>201911241042292_changes 4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911241604138_Add role.resx">
+      <DependentUpon>201911241604138_Add role.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

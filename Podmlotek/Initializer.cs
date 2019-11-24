@@ -93,6 +93,71 @@ namespace Podmlotek
 			};
 			subcategories.ForEach(s => context.Subcategory.AddOrUpdate(s));
 			context.SaveChanges();
+
+			Users admin = new Users
+			{
+				UsersId = 1,
+				Login = "admin",
+				Name = "admin",
+				Surname = "admin",
+				Address = "admin",
+				Email = "admin@admin.pl",
+				Phone = 989898989,
+				PostalCode = "98-762",
+				Password = "admin",
+				role = Role.Admin,
+			};
+
+			context.User.AddOrUpdate(admin);
+			context.SaveChanges();
+
+			var product = new List<Products>
+			{
+				new Products() {
+				UsersId=1,
+				Bestseller=true,
+				DateAdded=DateTime.Now,
+				Description="Rower miał przejechane 300km gdy wpadł w moje ręce, ja przejechałem 196km. Opony mają przejechane około 200-300 METRÓW (tylko testowo) - wymieniłem na nowe, zgodne z oryginalną specyfikacją. Napęd w stanie idealnym, zadbany od pierwszego kilometra.",
+				Hidden= false,
+				Item= "Rower szosowy",
+				Picture= "rower",
+				Price= 5000,
+			    ProductsId=1,
+				ShortDescription= "Rower szosowy Scultura Disc 400 z ROCZNĄ gwarancją (do 09.2020r.).",
+				SubcategoriesId= 48,
+				Users= admin },
+
+				 new Products(){
+				 UsersId=1,
+				 Bestseller=true,
+				 DateAdded= DateTime.Now, Description= "Stan telefonu jest dobry, tzn. na obudowie są ryski i zadrapania, wyświetlacz też ma lekkie ślady od noszenia w kieszeni. Nie stanowi to jednak problemu w codziennym użytkowaniu, ponieważ tego zwyczajnie nie widać / trzeba się temu mocno przyjrzeć. Telefon jest sprawny, lecz ma drobny mankament; bateria kwalifikuje się do wymiany. Obecnie to jakieś 30-40 % pojemności fabrycznej. Można to zrobić w popularnej sieci sklepów praktycznie od ręki za niedużą kwotę. Wspomnę jeszcze, że gniazdo micro usb nie jest tak ścisłe i zwarte jak od nowości, tzn. z oryginalnymi ładowarkami Samsung nie ma żadnego problemu, lecz z tańszymi zamiennikami może czasem nie stykać.",
+				 Hidden=false,
+				 Item= "Samsung Galaxy S6",
+				 Picture="telefon",
+				 Price=600,
+				 ProductsId=2,
+				 ShortDescription="Sprzedam jeden z moich najlepszych telefonów z jakimi miałem w ogóle styczność. Służył mi przez 3 lata i nigdy nie zawiódł.",
+				 SubcategoriesId=9,
+				 Users=admin },
+				 
+				 new Products() { 
+				 UsersId=1,
+				 Bestseller=true,
+				 DateAdded=DateTime.Now,
+				 Description="Seria Lenovo ThinkPad T stanowi kompletną linię innowacyjnych, cienkich oraz lekkich notebooków i została zaprojektowana w celu zwiększenia wydajności oraz trwałości. Notebooki ThinkPad serii T wyposażone są w technologię firmy Intel z całą gamą jej zalet.",
+				 Hidden=false,
+				 Item="Laptop Lenovo",
+				 Picture="laptop",
+				 Price=1000,
+				 ProductsId=3,
+				 ShortDescription="Lenovo ThinkPad T430 został zaprojektowany z użyciem technologii Lenovo Enhanced Experience dla Windows 7",
+				 SubcategoriesId=10,
+				 Users=admin,
+				 }
+			};
+			product.ForEach(p => context.Product.AddOrUpdate(p));
+			context.SaveChanges();
+
 		}
 	}
 }
