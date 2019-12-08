@@ -1,0 +1,85 @@
+﻿@model Podmlotek.Models.Users
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+	@using (Html.BeginForm("Register", "Account"))
+	{
+		@Html.AntiForgeryToken()
+			<table class="table" style="margin-left:auto; margin-right:auto; ">
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.Email, "E-mail:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.Email)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.Password, "Hasło:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.Password)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.ConfirmPassword, "Potwierdź hasło:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.ConfirmPassword)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.Name, "Imie:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.Name)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.Surname, "Nazwisko:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.Surname)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.Phone, "Nr telefonu:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.Phone)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.Address, "Adres:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.Address)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@Html.LabelFor(r => r.PostalCode, "Kod pocztowy:")
+					</td>
+					<td>
+						@Html.TextBoxFor(r => r.PostalCode)
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">
+						<input type="submit" value="Zarejestruj" class="orderButton" />
+					</td>
+				</tr>
+			</table>
+	}
+</div>

@@ -10,6 +10,7 @@ namespace Podmlotek.Models
 		public int SubcategoriesId { get; set; }
 		public int CategoriesId { get; set; }		
 		public string Name { get; set; }
-		public virtual Categories Categories { get; set; }		
+		public virtual Categories Categories { get; set; }
+		public virtual ICollection<Products> Product { get; set; }
 	}
 }

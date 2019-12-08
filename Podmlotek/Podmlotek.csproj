@@ -159,6 +159,22 @@
     <Compile Include="Migrations\201911241604138_Add role.Designer.cs">
       <DependentUpon>201911241604138_Add role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911272048529_ConfirmPasswordAdded.cs" />
+    <Compile Include="Migrations\201911272048529_ConfirmPasswordAdded.Designer.cs">
+      <DependentUpon>201911272048529_ConfirmPasswordAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911301609583_ConfirmPassword.cs" />
+    <Compile Include="Migrations\201911301609583_ConfirmPassword.Designer.cs">
+      <DependentUpon>201911301609583_ConfirmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911301623022_DeleteLogin.cs" />
+    <Compile Include="Migrations\201911301623022_DeleteLogin.Designer.cs">
+      <DependentUpon>201911301623022_DeleteLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912081341365_VirtualMethodToModelsAdded.cs" />
+    <Compile Include="Migrations\201912081341365_VirtualMethodToModelsAdded.Designer.cs">
+      <DependentUpon>201912081341365_VirtualMethodToModelsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\OrderItem.cs" />
@@ -167,7 +183,7 @@
     <Compile Include="Models\Subcategories.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\CategoryListViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +243,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Account\Logining.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\CategoryList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -259,6 +277,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911241604138_Add role.resx">
       <DependentUpon>201911241604138_Add role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911272048529_ConfirmPasswordAdded.resx">
+      <DependentUpon>201911272048529_ConfirmPasswordAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911301609583_ConfirmPassword.resx">
+      <DependentUpon>201911301609583_ConfirmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911301623022_DeleteLogin.resx">
+      <DependentUpon>201911301623022_DeleteLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912081341365_VirtualMethodToModelsAdded.resx">
+      <DependentUpon>201912081341365_VirtualMethodToModelsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

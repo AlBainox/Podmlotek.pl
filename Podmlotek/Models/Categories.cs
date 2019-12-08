@@ -7,7 +7,8 @@ namespace Podmlotek.Models
 {
 	public class Categories
 	{
-		public int CategoriesId { get; set; }		
-		public string Name { get; set; }		
+		public int CategoriesId { get; set; }			
+		public string Name { get; set; }
+		public virtual ICollection<Subcategories> Subcategory { get; set; }
 	}
 }

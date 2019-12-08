@@ -1,8 +1,8 @@
 ﻿@model Podmlotek.Models.Products
 @using Podmlotek.Infrastructure
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -10,24 +10,30 @@
 <main>
 	<article>
 		<section>
-			<header>
-				<h2>
-					@Model.Item
-				</h2>
-			</header>
-			<img class="picture" src="@Url.PicturesPath(Model.Picture)"/>
-			<div id="description">
-				@Model.Description
+			<div id="content">
+				<div class="picture">
+					<img style="margin:auto;" src="@Url.PicturesPath(Model.Picture)" />
+				</div>
+				<div class="title">
+					<h1 class="h1">
+						@Model.Item
+					</h1>
+					<div class="price">
+						Cena: <span> @Model.Price zł</span>
+					</div>
+					<div class="buttons">
+						<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = Model.ProductsId })">
+							Dodaj do koszyka
+						</a>
+					</div>
+				</div>
+				
+				<div id="description">
+					<hr class="line"/>
+					
+					@Model.Description
+				</div>								
 			</div>
-			<div>
-				Cena: <span> @Model.Price zł</span>
-			</div>
-			<div class="buttons">
-				<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = Model.ProductsId })"> 
-				Dodaj do koszyka
-				</a>
-			</div>
-
 		</section>
 	</article>
 </main>

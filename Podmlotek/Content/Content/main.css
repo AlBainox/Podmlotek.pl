@@ -7,16 +7,18 @@ body
     font-size: 17px;
 }
 
-h1.logo
-{
-	font-size: 44px;	
+h1.logo {
+	font-size: 44px;
 	font-weight: 700;
 	color: #dddddd;
 	text-align: center;
-	text-transform:uppercase;
+	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin-top: 50px;
-	margin-bottom: 40px;
+	margin-bottom: 40px;	
+}
+.link a {
+	text-decoration: none;
 }
 #pasek
 {
@@ -79,13 +81,7 @@ h1.logo
 	text-align: center;
 	padding: 0;
 }
-h1
-{
-	font-size: 44px;
-	font-weight: 400;
-	color: #39a5fi;
-	margin-bottom: 20px;
-}
+
 .author
 {
 	display: inline-block;
@@ -363,12 +359,45 @@ div.newFlag {
     top: 0;
     left: 0;
 }
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #808080;
+	padding:10%;
+	width: 950px;
+	height: 800px;
+}
+h1.h1 {
+	font-size: 32px;
+	font-weight: 700;
+}
 .picture {
+	vertical-align:central;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
 	float: left;
 }
-#description {
+.title {
 	display: block;
+	text-align: center;
 }
+.price {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+#description {
+	float: left;
+	padding: 10%;
+}
+.line {
+	margin-bottom: 30px;
+}
+.inscription {	
+	color: #dddddd;
+	text-decoration: none;	
+}
+
 .orderButton {
 	height: 40px;
 	background-color: #CD7F32;
@@ -379,8 +408,13 @@ div.newFlag {
 	padding: 2px 15px 2px 15px;
 	text-align: center;
 	vertical-align: middle;
+	margin-top: 30px;
+	text-decoration: none;
 }
 
+.table {
+	padding: 10%;
+}
   #footer
 {
 	background-color: #CD7F32;
@@ -395,4 +429,4 @@ div.newFlag {
 {
 	color: #1c74b2;
 	text-decoration: none;	
-} 
+}

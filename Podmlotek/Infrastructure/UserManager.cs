@@ -25,5 +25,7 @@ namespace Podmlotek.Infrastructure
 			user = null;
 			return user;
 		}
+			
+
 	}
 }

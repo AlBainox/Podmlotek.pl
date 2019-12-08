@@ -11,10 +11,14 @@ namespace Podmlotek.Models
 		public int UsersId { get; set; }
 		[Required(ErrorMessage = "Wprowadź login")]
 		
-		public string Login { get; set; }
 		public Role role { get; set; }
 		[Required(ErrorMessage = "Wprowadź hasło")]
-		public string Password { get; set; }
+		[StringLength(30, ErrorMessage = "{0} musi mieć co najmniej {2} znaków.", MinimumLength = 2)]
+		[DataType(DataType.Password)]
+		[Display(Name = "Hasło")]
+		public string Password { get; set; }		
+		[Compare("Password", ErrorMessage ="Powtórz hasło")]
+		public string ConfirmPassword { get; set; }
 		[Required(ErrorMessage = "Wprowadz imie")]
 		public string Name { get; set; }
 		[Required(ErrorMessage = "Wprowadz nazwisko")]

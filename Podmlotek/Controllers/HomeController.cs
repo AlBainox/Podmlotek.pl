@@ -22,6 +22,22 @@ namespace Podmlotek.Controllers
 			};
 
 			return View(vm);
-		}		
+		}
+
+		public ActionResult CategoryList(int categoryId, int subcategoryId)
+		{
+			var subcategories = db.Subcategory.Where(s => s.CategoriesId == categoryId);
+			var products = db.Product.Where(p => p.SubcategoriesId == subcategoryId);
+
+			CategoryListViewModel cl = new CategoryListViewModel()
+			{
+				Subcategories = subcategories,
+				Products = products
+			};
+			return View(cl);
+		}
+		
+
 	}
+
 }
