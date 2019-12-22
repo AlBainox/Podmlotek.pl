@@ -10,29 +10,32 @@
 <main>
 	<article>
 		<section>
-			<div id="content">
+			<div class="content">
 				<div class="picture">
 					<img style="margin:auto;" src="@Url.PicturesPath(Model.Picture)" />
 				</div>
-				<div class="title">
-					<h1 class="h1">
-						@Model.Item
-					</h1>
-					<div class="price">
-						Cena: <span> @Model.Price zł</span>
+				<div class="desc">
+					<div class="title">
+						<h1 class="h1">
+							@Model.Item
+						</h1>
+						<div class="price">
+							Cena: <span> @Model.Price zł</span>
+						</div>
+						<div class="buttons">
+							<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = Model.ProductsId })">
+								Dodaj do koszyka
+							</a>
+						</div>
 					</div>
-					<div class="buttons">
-						<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = Model.ProductsId })">
-							Dodaj do koszyka
-						</a>
+					<div id="description">
+						<hr class="line" />
+
+						@Model.Description
 					</div>
 				</div>
 				
-				<div id="description">
-					<hr class="line"/>
-					
-					@Model.Description
-				</div>								
+									
 			</div>
 		</section>
 	</article>

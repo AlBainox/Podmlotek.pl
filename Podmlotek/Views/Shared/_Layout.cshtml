@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 	<title>@ViewBag.Title</title>
-	<meta name="description" content="Internetowy sklep a aukcjami użytkowników">
+	<meta name="description" content="Internetowy sklep z aukcjami użytkowników">
 	<meta name="keywords" content="sklep, sprzedaż, aukcje internetowe">
 	<meta name="author" content="Albert Brząkała">
 
@@ -23,27 +23,16 @@
 <body>
 	<header>
 
-		<div id="pasek">		
+		<div id="pasek">
 			<a href="@Url.Action("Logining", "Account")"> Zaloguj</a>
 			<a href="#">Koszyk</a>
 		</div>
-		
-			<a style="text-decoration:none" href="@Url.Action("Index","Home")">
-				<h1 class="logo">Podmlotek.pl - serwis aukcyjny</h1>
-			</a>
-		
-		<nav id="topnav">
-			<ul class="menu">
-				<li><a href="#">Dom i ogród</a></li>
-				<li><a href="#">Elektronika</a></li>
-				<li><a href="#">Książki</a></li>
-				<li><a href="#">Moda</a></li>
-				<li><a href="#">Motoryzacja</a></li>
-				<li><a href="#">Nieruchomości</a></li>
-				<li><a href="#">Sport</a></li>
-				<li><a href="#">Supermarket</a></li>
-			</ul>
-		</nav>
+
+		<a style="text-decoration:none" href="@Url.Action("Index","Home")">
+			<h1 class="logo">Podmlotek.pl - serwis aukcyjny</h1>
+		</a>
+		@Html.Action("Categories", "Home")
+
 	</header>
 
 	<div>

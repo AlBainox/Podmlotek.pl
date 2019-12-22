@@ -6,10 +6,8 @@ using System.Web;
 
 namespace Podmlotek.ViewModels
 {
-	public class HomeViewModel
+	public class CategoriesViewModel
 	{
-		public IEnumerable<Products> News { get; set; }
-		public IEnumerable<Products> Bestsellers { get; set; }
-		
+		public IEnumerable<Categories> Categories { get; set; }
 	}
 }

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Podmlotek.Models.Subcategories>
+
+	<nav class="SubcategoryList">
+		<ul>
+			@foreach (var item in Model)
+			{
+				<li>
+					<a href="@Url.Action("ProductList","Home", new { subcategoryId = item.SubcategoriesId })">
+						@item.Name.ToString();
+					</a>
+				</li>
+			}
+		</ul>
+	</nav>

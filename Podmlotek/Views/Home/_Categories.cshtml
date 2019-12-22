@@ -1,0 +1,10 @@
+﻿@model Podmlotek.ViewModels.CategoriesViewModel
+
+	<nav id="topnav">
+		<ul class="menu">
+			@foreach (var category in Model.Categories)
+			{
+				<li><a href="@Url.Action("PorductList","Home", new { categoryId = category.CategoriesId })">@category.Name</a></li>
+			} 			
+		</ul>
+	</nav>
