@@ -1,8 +1,17 @@
-﻿
+﻿@model Podmlotek.ViewModels.ProductsViewModel
+@using Podmlotek.Infrastructure
 @{
-    ViewBag.Title = "PorductList";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Lista produktów";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="main">
 	<main>
-		@Html.Action("SubcategoryList", "Home")
+		<div id="Subsize">
+			@Html.Action("SubcategoryList", "Home")
+		</div>
+		<div class="ProductList">
+			@Html.Action("ProductItems", "Home")
+		</div>
+
 	</main>
+</div>

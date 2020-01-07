@@ -125,6 +125,7 @@ namespace Podmlotek
 				Price= 5000,			    
 				ShortDescription= "Rower szosowy Scultura Disc 400 z ROCZNĄ gwarancją (do 09.2020r.).",
 				SubcategoriesId= 48,
+				CategoriesId= 7,
 				Users= admin },
 
 				 new Products(){
@@ -139,6 +140,7 @@ namespace Podmlotek
 				 Price=600,				 
 				 ShortDescription="Sprzedam jeden z moich najlepszych telefonów z jakimi miałem w ogóle styczność. Służył mi przez 3 lata i nigdy nie zawiódł.",
 				 SubcategoriesId=9,
+				 CategoriesId= 2,
 				 Users=admin },
 				 
 				 new Products() {
@@ -153,6 +155,7 @@ namespace Podmlotek
 				 Price=1000,				 
 				 ShortDescription="Lenovo ThinkPad T430 został zaprojektowany z użyciem technologii Lenovo Enhanced Experience dla Windows 7",
 				 SubcategoriesId=10,
+				 CategoriesId= 2,
 				 Users=admin,
 				 }
 			};

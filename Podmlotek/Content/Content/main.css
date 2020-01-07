@@ -20,20 +20,23 @@ h1.logo {
 .link a {
 	text-decoration: none;
 }
-#pasek
-{
+#pasek {
 	background-color: #CD7F32;
 	text-align: right;
 	padding: 10px;
 	font-size: 18px;
 	min-height: 38px;
-	line-height: 200%;
-	
+	line-height: 200%;	
 }
-#pasek a
-{
+.MainBtns {
+	padding-left: 20px;
+	padding-right: 20px;
+	border-right: 1px dashed #02a24b;
+	border-left: 1px dashed #02a24b;
+}
+#pasek a {
 	color: #1c74b2;
-	text-decoration: none;	
+	text-decoration: none;
 }
 #pasek a:hover
 {
@@ -82,83 +85,6 @@ h1.logo {
 	padding: 0;
 }
 
-.author
-{
-	display: inline-block;
-}
-.author a
-{
-	opacity: 0.9;
-}
-.author a:hover
-{
-	opacity: 1;
-}
-figure
-{
-	margin: 8px;
-	padding:0;
-}
-figcaption
-{
-	margin: 8px;
-	padding:0;
-}
-.entries
-{
-	margin-left: auto;
-	margin-right: auto;
-	width: 950px;
-	text-align: center;
-	padding-top: 0;
-	padding-bottom: 80px;
-	margin-top: 40px;
-}
-#newest
-{
-	background-color:#191d21;	
-}
-.entry
-{
-	background-color: #222930;
-	padding: 10px;
-	text-align: justify;
-	margin-top: 40px;
-	border-radius: 5px;
-}
-.entryimg
-{
-	display: inline-block;
-	margin-left: 30px;
-	width: 120px;
-}
-.entryimg img
-{
-	width: 90px;
-	height:90px;
-}
-.entrytxt
-{
-	display: inline-block;
-	width: 750px;
-	font-size: 15px;
-	
-}
-h2
-{
-	font-size: 20px;
-	font-weight: 400;
-	/*color: #39a3fi;*/
-}
-.kontakt
-{
-	margin-left: auto;
-	margin-right: auto;
-	width: 950px;
-	text-align: center;
-	padding-bottom: 70px;
-	margin-bottom: 50px;
-}
 ul.duzaListaKursy li {	
 	margin-left: 45px;
     width: 333.33px;
@@ -358,30 +284,64 @@ div.newFlag {
     top: 0;
     left: 0;
 }
-.content {	
+.content {
+	float: left;
 	background-color: #808080;
-	padding:10%;	
+	padding: 10%;
 }
 h1.h1 {
 	font-size: 32px;
 	font-weight: 700;
 }
-
-nav.SubcategoryList {
-	width: 202px;
-	font-size: 18px;
-	font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
-	border-right: 1px solid #E5E5E5;
+#Subsize {
+	margin-top: 50px;
 	float: left;
+	width: 250px;
+	height: 950px;
+}
+.SubListSize {
+	margin-top: 50px;
+	float: left;
+	width: 250px;
+	height: 330px;
+	background-color: #CD7F32;
+}
+.ProductItem {
+	float: left;
+	width: 800px;
+	height: 250px;
+	border: 1px dashed orange;
+	margin-left: 150px;
+	margin-top: 75px;
+	text-align: -moz-center;
+}
+	.ProductItem > img {
+		height: 100%;		
+	}
+.ProductList {
+	margin-left: auto;
+	margin-right: auto;
+}
+nav.SubcategoryList {	
+	font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
+	padding: 10px;
+	font-size: 18px;
+	line-height: 200%;
 }
 	nav.SubcategoryList a {
 		
 		color: #1c74b2;
 		text-decoration: none;
 	}
+		nav.SubcategoryList a:hover {
+			color: #afff;
+		}
 		nav.SubcategoryList ul {
 			list-style-type: none;
 		}
+.main {
+	height: 1000px;	
+}
 .picture {
 	vertical-align: middle;
 	margin-left: auto;
@@ -409,9 +369,9 @@ nav.SubcategoryList {
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
-.inscription {	
+.inscription {
 	color: #dddddd;
-	text-decoration: none;	
+	margin-top: 20px;
 }
 
 .orderButton {
@@ -426,6 +386,9 @@ nav.SubcategoryList {
 	vertical-align: middle;
 	margin-top: 30px;
 	text-decoration: none;
+}
+.buttons {
+	margin-top: 20px;
 }
 
 .table {

@@ -1,0 +1,25 @@
+﻿@model Podmlotek.ViewModels.ProductsViewModel
+@using Podmlotek.Infrastructure
+
+@foreach (var item in Model.Products)
+{
+	<section>
+		<a class="ProductItem" href="@Url.Action("Details","Product", new { id= item.ProductsId})">
+			<img src="@Url.PicturesPath(item.Picture)" style="float:left;" />
+			<div class="inscription">
+				<p><h2>@item.Item</h2> </p>
+				<p>@item.ShortDescription</p>
+			</div>
+			<div class="inscription">
+				Cena: @item.Price zł
+				<p>
+					<div class="buttons">
+						<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = item.ProductsId })">
+							Dodaj do koszyka
+						</a>
+					</div>
+				</p>
+			</div>			
+		</a>
+	</section>
+}
