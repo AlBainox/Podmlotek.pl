@@ -18,11 +18,14 @@ namespace Podmlotek.Infrastructure
 
 		public static void Set(Users newUser)
 		{
-			newUser = user;
+			user = newUser;
 		}
 		public static Users LogOut()
 		{
-			user = null;
+			if (user!=null)
+			{
+				user = null;
+			}			
 			return user;
 		}
 			

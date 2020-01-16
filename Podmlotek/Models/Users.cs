@@ -9,8 +9,7 @@ namespace Podmlotek.Models
 	public class Users
 	{
 		public int UsersId { get; set; }
-		[Required(ErrorMessage = "Wprowadź login")]
-		
+		[Required(ErrorMessage = "Wprowadź login")]		
 		public Role role { get; set; }
 		[Required(ErrorMessage = "Wprowadź hasło")]
 		[StringLength(30, ErrorMessage = "{0} musi mieć co najmniej {2} znaków.", MinimumLength = 2)]

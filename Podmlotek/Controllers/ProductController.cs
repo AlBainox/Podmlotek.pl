@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Podmlotek.Infrastructure;
+using Podmlotek.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,8 @@ namespace Podmlotek.Controllers
     {
 		// GET: Product
 		Context db = new Context();
-        public ActionResult Index()
+		
+		public ActionResult Index()
         {
             return View();
         }
@@ -21,7 +24,12 @@ namespace Podmlotek.Controllers
 		}
 		public ActionResult AddToShoppingCart(int id)
 		{
-			return View(id);
+			
+			sc.Product = ordered;
+			sc.Pieces +=1;
+			sc.OrderValue += ordered.Price;
+			sc.Products.Add(ordered);
+			return View(sc);
 		}
 	}
 }

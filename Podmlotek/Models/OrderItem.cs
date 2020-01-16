@@ -11,8 +11,8 @@ namespace Podmlotek.Models
 		public int OrdersId { get; set; }
 		public int ProductsId { get; set; }
 		public int Pieces { get; set; }
-		public int OrderPrice { get; set; }
-		public virtual Products Product { get; set; }
-		public virtual Orders Order { get; set; }
+		public decimal OrderValue { get; set; }
+		public virtual Products Products { get; set; }
+		public virtual Orders Orders { get; set; }
 	}
 }

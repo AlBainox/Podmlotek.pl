@@ -31,8 +31,7 @@ h1.logo {
 .MainBtns {
 	padding-left: 20px;
 	padding-right: 20px;
-	border-right: 1px dashed #02a24b;
-	border-left: 1px dashed #02a24b;
+	border-right: 1px dashed #02a24b;	
 }
 #pasek a {
 	color: #1c74b2;
@@ -42,8 +41,10 @@ h1.logo {
 {
 	color: #FFBF00;	
 }
-#topnav
-{
+#pasek > a:first-child {
+	border-left: 1px dashed #02a24b;
+}
+#topnav {
 	background-color: #1c74b2;
 	text-align: center;
 }
@@ -387,10 +388,42 @@ nav.SubcategoryList {
 	margin-top: 30px;
 	text-decoration: none;
 }
-.buttons {
-	margin-top: 20px;
+.AddTo {
+	
+	height: 40px;
+	background-color: #CD7F32;
+	color: #dfdfdf;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 38px;
+	padding: 2px 15px 2px 15px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+	text-decoration: none;
 }
-
+ul.item {
+	
+	overflow: hidden;
+	list-style-type: none;
+	font-size: 18px;
+}
+	ul.item li {
+		
+		float: left;
+		position: relative;
+	}
+		ul.item li a {
+			text-decoration: none;
+		}
+		ul.item li article {
+			height: 100%;
+		}
+		ul.item li a.AddTo {
+			position: absolute;
+			right: 18%;
+			bottom: 5%;
+		}
 .table {
 	padding: 10%;
 }
