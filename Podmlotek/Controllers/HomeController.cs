@@ -1,4 +1,6 @@
-﻿using Podmlotek.ViewModels;
+﻿using Podmlotek.Infrastructure;
+using Podmlotek.Models;
+using Podmlotek.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace Podmlotek.Controllers
 	{
 		Context db = new Context();
 
+
 		public ActionResult Index()
 		{
 			HomeViewModel hvm = new HomeViewModel();
@@ -21,48 +24,50 @@ namespace Podmlotek.Controllers
 			hvm.Bestsellers = bestseller;
 			hvm.News = nowosci;
 
+
 			return View(hvm);
 		}
-
-		[ChildActionOnly]
-		public ActionResult SubcategoryList(int? categoryId)
-		{
-			var subcategories = db.Subcategory.Where(s => s.CategoriesId == categoryId).ToList();
-			return PartialView("_SubcategoryList", subcategories);
-		}
-
-		public ActionResult PorductList()
-		{
-			return View();
-		}
-		[ChildActionOnly]
-		public ActionResult ProductItems(int? subcategoryId, int? categoryId)
-		{
-			ProductsViewModel pvm = new ProductsViewModel();
-
-			if (subcategoryId == null)
-			{
-				var products = db.Product.Where(p => p.CategoriesId == categoryId).ToList();
-				pvm.Products = products;
-			}
-			else if (categoryId == null)
-			{
-				var products = db.Product.Where(p => p.SubcategoriesId == subcategoryId).ToList();
-				pvm.Products = products;
-			}
-			return PartialView("_ProductItems", pvm);
-		}
-
 		[ChildActionOnly]
 		public ActionResult Categories()
 		{
-			CategoriesViewModel cvm = new CategoriesViewModel();
-
+			ProductsViewModel pvm = new ProductsViewModel();
 			var categories = db.Category;
-			cvm.Categories = categories;
-			return PartialView("_Categories", cvm);
+			pvm.Categories = categories;
+			return PartialView("_Categories", pvm);
 		}
 
-	}
+		public ActionResult ProductList(int categoryId, int? subcategoryId)
+		{
+			ProductsViewModel pvm = new ProductsViewModel();
 
-} 
+			List<int> subcategoriesId= new List<int>();
+
+			var subcategories = db.Subcategory.Where(i => i.CategoriesId == categoryId);
+
+			foreach ( var item in subcategories)
+			{
+				var newId = item.SubcategoriesId;
+				subcategoriesId.Add(newId);
+			}
+
+			List<Products> products = new List<Products>();
+			foreach (var item in subcategoriesId)
+			{
+				var productsToAdd = db.Product.Where(i => i.SubcategoriesId == item).ToList();
+				products.AddRange(productsToAdd);
+			}
+			pvm.Subcategories = subcategories;
+			pvm.Products = products;
+
+			if (subcategoryId.HasValue)
+			{
+				var newProducts = db.Product.Where(i => i.SubcategoriesId == subcategoryId);
+				pvm.Products = null;
+				pvm.Products = newProducts;
+				return View(pvm);
+			}
+
+			return View(pvm);
+		}
+	}
+}

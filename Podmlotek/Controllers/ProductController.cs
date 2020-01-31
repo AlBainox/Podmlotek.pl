@@ -25,11 +25,7 @@ namespace Podmlotek.Controllers
 		public ActionResult AddToShoppingCart(int id)
 		{
 			
-			sc.Product = ordered;
-			sc.Pieces +=1;
-			sc.OrderValue += ordered.Price;
-			sc.Products.Add(ordered);
-			return View(sc);
+			return View();
 		}
 	}
 }

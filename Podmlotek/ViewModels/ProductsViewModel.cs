@@ -9,5 +9,7 @@ namespace Podmlotek.ViewModels
 	public class ProductsViewModel
 	{
 		public IEnumerable<Products> Products { get; set; }
+		public IEnumerable<Subcategories> Subcategories { get; set; }
+		public IEnumerable<Categories> Categories { get; set; }
 	}
 }

@@ -260,9 +260,7 @@
     <Content Include="Views\Account\Logining.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\_Categories.cshtml" />
-    <Content Include="Views\Home\_SubcategoryList.cshtml" />
-    <Content Include="Views\Home\PorductList.cshtml" />
-    <Content Include="Views\Home\_ProductItems.cshtml" />
+    <Content Include="Views\Home\ProductList.cshtml" />
     <Content Include="Views\Product\AddToShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>

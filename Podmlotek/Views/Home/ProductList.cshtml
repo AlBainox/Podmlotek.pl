@@ -1,0 +1,48 @@
+﻿@model Podmlotek.ViewModels.ProductsViewModel
+@using Podmlotek.Infrastructure
+@{
+	ViewBag.Title = "Lista produktów";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main">
+	<main>
+		<div id="Subsize">
+			<nav class="SubcategoryList">
+				<div class="SubListSize">
+					<ul>
+						@foreach (var item in Model.Subcategories)
+						{
+							<li>
+								<a href="@Url.Action("ProductList", "Home", new { categoryId= item.CategoriesId, subcategoryId = item.SubcategoriesId })">
+									@item.Name.ToString();
+									@*/Home/ProductList?categoryId=@item.SubcategoriesId*@
+								</a>
+							</li>
+						}
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="ProductList">
+			<ul class="item">
+				@foreach (var item in Model.Products)
+				{
+					<li>
+						<section>
+							<a class="ProductItem" href="@Url.Action("Details","Product", new { id= item.ProductsId})">
+								<img src="@Url.PicturesPath(item.Picture)" style="float:left;" />
+								<div class="inscription">
+									<p><h2>@item.Item</h2> </p>
+									<p>@item.ShortDescription</p>
+									<p>Cena: @item.Price zł</p>
+								</div>
+							</a>
+							<a class="AddTo" href="@Url.Action("AddToShoppingCart", "Product", new { id = item.ProductsId })">	Dodaj do koszyka</a>
+
+						</section>
+					</li>
+				}
+			</ul>
+			</div>
+	</main>
+</div>
