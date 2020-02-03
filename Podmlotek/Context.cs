@@ -1,11 +1,12 @@
 namespace Podmlotek
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Podmlotek.Models;
     using System;
 	using System.Data.Entity;
 	using System.Linq;
 
-	public class Context : DbContext
+	public class Context : IdentityDbContext<ApplicationUser>
 	{
 		
 		public Context()
@@ -13,7 +14,11 @@ namespace Podmlotek
 		{
 			
 		}
-	
+		public static Context Create()
+		{
+			return new Context();
+		}
+
 		static Context()
 		{
 			Database.SetInitializer<Context>(new Initializer());

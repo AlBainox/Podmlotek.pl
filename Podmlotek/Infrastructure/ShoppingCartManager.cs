@@ -33,7 +33,7 @@ namespace Podmlotek.Infrastructure
 		{
 			var shoppingCart = GetShoppingCart();
 			var product = shoppingCart.Find(i => i.Product.ProductsId == id);
-			if (product != null) 
+			if (product != null)  
 			{
 				product.Pieces++;
 			}

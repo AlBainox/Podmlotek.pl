@@ -1,13 +1,13 @@
 ﻿@model Podmlotek.Models.Users
 @{
-	ViewBag.Title = "Logining";
+	ViewBag.Title = "Login";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 
 	<div>
-		@using (@Html.BeginForm("Logining", "Account"))
+		@using (@Html.BeginForm("Login", "Account"))
 		{
 			@Html.AntiForgeryToken()
 

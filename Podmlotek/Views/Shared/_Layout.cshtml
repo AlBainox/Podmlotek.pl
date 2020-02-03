@@ -24,9 +24,8 @@
 	<header>
 
 		<div id="pasek">
-			<a class="MainBtns" href="#"> Moje konto</a>
-			<a class="MainBtns" href="@Url.Action("Logining", "Account")"> Zaloguj</a>
-			<a class="MainBtns" href="#">Koszyk</a>
+			@Html.Partial("_LoginPartial")
+			<a class="MainBtns" style="border-left: 1px dashed #02a24b;" href="#">Koszyk</a>
 		</div>
 		<div>
 			<a style="text-decoration:none" href="@Url.Action("Index","Home")">

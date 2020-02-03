@@ -12,8 +12,7 @@ namespace Podmlotek.Controllers
 	public class HomeController : Controller
 	{
 		Context db = new Context();
-
-
+		
 		public ActionResult Index()
 		{
 			HomeViewModel hvm = new HomeViewModel();

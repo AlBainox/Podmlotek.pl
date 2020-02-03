@@ -9,8 +9,7 @@ namespace Podmlotek.Models
 	public class Products
 	{
 		public int ProductsId { get; set; }
-		public int SubcategoriesId { get; set; }
-		public int CategoriesId { get; set; }
+		public int SubcategoriesId { get; set; }	
 		public int UsersId { get; set; }
 		public string Item { get; set; }
 		public DateTime DateAdded { get; set; }

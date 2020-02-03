@@ -24,7 +24,6 @@ namespace Podmlotek.Controllers
 		}
 		public ActionResult AddToShoppingCart(int id)
 		{
-			
 			return View();
 		}
 	}
