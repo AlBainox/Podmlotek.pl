@@ -1,14 +1,18 @@
-﻿@model Podmlotek.Models.Users
+﻿@model Podmlotek.ViewModels.RegisterViewModel
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<div>
-	@using (Html.BeginForm("Register", "Account"))
-	{
-		@Html.AntiForgeryToken()
+	<div>
+		@using (Html.BeginForm("Register", "Account"))
+		{
+			@Html.AntiForgeryToken()
+			<div id="login-error">
+				@Html.ValidationMessage("loginerror", "")
+				@Html.ValidationSummary()
+			</div>
 			<table class="table" style="margin-left:auto; margin-right:auto; ">
 				<tr>
 					<td>
@@ -16,6 +20,9 @@
 					</td>
 					<td>
 						@Html.TextBoxFor(r => r.Email)
+						<div class="login-validation-message">
+							@Html.ValidationMessageFor(r => r.Email)
+						</div>
 					</td>
 				</tr>
 				<tr>
@@ -23,7 +30,10 @@
 						@Html.LabelFor(r => r.Password, "Hasło:")
 					</td>
 					<td>
-						@Html.TextBoxFor(r => r.Password)
+						@Html.PasswordFor(r => r.Password)
+						<div class="login-validation-message">
+							@Html.ValidationMessageFor(r => r.Password)
+						</div>
 					</td>
 				</tr>
 				<tr>
@@ -31,7 +41,7 @@
 						@Html.LabelFor(r => r.ConfirmPassword, "Potwierdź hasło:")
 					</td>
 					<td>
-						@Html.TextBoxFor(r => r.ConfirmPassword)
+						@Html.PasswordFor(r => r.ConfirmPassword)
 					</td>
 				</tr>
 				<tr>
@@ -81,5 +91,5 @@
 					</td>
 				</tr>
 			</table>
-	}
-</div>
+		}
+	</div>

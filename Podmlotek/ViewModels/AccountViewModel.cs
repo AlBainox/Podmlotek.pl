@@ -37,5 +37,11 @@ namespace Podmlotek.ViewModels
 		[Display(Name = "Potwierdz Hasło ")]
 		[Compare("Password", ErrorMessage = "Hasło i potwierdzenie hasła nie pasują do siebie.")]
 		public string ConfirmPassword { get; set; }
+		public string Name { get; set; }
+		[Required(ErrorMessage = "Wprowadz nazwisko")]
+		public string Surname { get; set; }
+		public int Phone { get; set; }		
+		public string Address { get; set; }
+		public string PostalCode { get; set; }
 	}
 }

@@ -7,11 +7,11 @@
 		{
 			@Html.AntiForgeryToken()
 
-			<div>
+			<div class="MainBtns" style="border-left: 1px dashed #02a24b;">
 				@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
 
 			</div>
-			<div>
+			<div class="MainBtns">
 				<a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a>
 			</div>
 		}
