@@ -10,7 +10,7 @@ namespace Podmlotek.Models
 	{
 		public int ProductsId { get; set; }
 		public int SubcategoriesId { get; set; }	
-		public int UsersId { get; set; }
+		public int AspNetUsersId { get; set; }	
 		public string Item { get; set; }
 		public DateTime DateAdded { get; set; }
 		public string Picture { get; set; }
@@ -23,8 +23,7 @@ namespace Podmlotek.Models
 
 
 		public virtual Subcategories Subcategories { get; set; }
-		public virtual Users Users { get; set; }
-		
+		public virtual ApplicationUser User { get; set; }
 	}
 	
 }

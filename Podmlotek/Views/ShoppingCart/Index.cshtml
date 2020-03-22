@@ -1,0 +1,35 @@
+﻿@model Podmlotek.ViewModels.ShoppingCartViewModel
+@using Podmlotek.Infrastructure
+@{
+	ViewBag.Title = "Koszyk";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+	<div class="shoppingCart">
+		<h2>Koszyk</h2>
+
+		<div class="ProductList" style="margin-left:auto; margin-right:auto;">
+			<ul class="item">
+				@foreach (var item in Model.ShoppingCartItems)
+				{
+					<li>
+						<section>
+							<a class="itemsSummary" href="@Url.Action("Details","Product", new { id= item.Product.ProductsId})">
+								<img src="@Url.PicturesPath(item.Product.Picture)" style="float:left;" />
+								<div class="inscription">
+									<p><h2>@item.Product.Item</h2> </p>
+									<p>@item.Product.ShortDescription</p>
+									<p>Kwota: @item.OrderValue zł Ilość: @item.Pieces</p>
+								</div>
+							</a>
+						</section>
+					</li>
+				}
+
+			</ul>
+			<hr class="line" />
+			<div class="summary">
+				<div class="totalPrice"> Razem: @Model.TotalPrice zł</div>
+				<div class="payButton"> Zapłać</div>
+			</div>
+		</div>
+	</div>

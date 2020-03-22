@@ -20,7 +20,7 @@
 					{
 						<li>
 							<article>
-								<a class="dodajDoKoszykaLink" href="@Url.Action("AddToShoppingCart", "Product", new { id = bestseller.ProductsId })">
+								<a class="dodajDoKoszykaLink" href="@Url.Action("AddTo", "ShoppingCart", new { id = bestseller.ProductsId })">
 									<img src="../Content/Images/koszyk.png" />
 								</a>
 								<a class="kursSzczegolyLink" href="@Url.Action("Details","Product", new { id=bestseller.ProductsId})" >
@@ -42,7 +42,7 @@
 					{
 						<li>
 							<article>
-								<a class="dodajDoKoszykaLink" href="@Url.Action("AddToShoppingCart", "Product", new { id = nowosci.ProductsId })">
+								<a class="dodajDoKoszykaLink" href="@Url.Action("AddTo", "ShoppingCart", new { id = nowosci.ProductsId })">
 									<img src="../Content/Images/koszyk.png" />
 								</a>
 								<a class="kursSzczegolyLink" href="@Url.Action("Details","Product", new { id=nowosci.ProductsId})">

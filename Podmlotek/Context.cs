@@ -24,7 +24,6 @@ namespace Podmlotek
 			Database.SetInitializer<Context>(new Initializer());
 		}
 
-		public virtual DbSet<Users> User { get; set; }
 		public virtual DbSet<Categories> Category { get; set; }
 		public virtual DbSet<Subcategories> Subcategory { get; set; }
 		public virtual DbSet<Products> Product { get; set; }

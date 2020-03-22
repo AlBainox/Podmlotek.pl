@@ -10,16 +10,19 @@ namespace Podmlotek.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-			
+			AutomaticMigrationDataLossAllowed = true;
+
+
 		}
 
         protected override void Seed(Podmlotek.Context context)
         {
 			Initializer.SeedProductData(context);
-            //  This method will be called after migrating to the latest version.
+			Initializer.SeedUser(context);
+			//  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
-        }
+			//  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+			//  to avoid creating duplicate seed data.
+		}
     }
 }

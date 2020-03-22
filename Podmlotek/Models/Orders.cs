@@ -9,7 +9,9 @@ namespace Podmlotek.Models
 	public class Orders
 	{
 		public int OrdersId { get; set; }
-		public string UsersId { get; set; }
+		public string UserId { get; set; }
+
+		public virtual ApplicationUser User { get; set; }
 		[Required(ErrorMessage = "Wprowadz imie")]
 		[StringLength(50)]
 		public string Imie { get; set; }

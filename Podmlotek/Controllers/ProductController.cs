@@ -12,19 +12,11 @@ namespace Podmlotek.Controllers
     {
 		// GET: Product
 		Context db = new Context();
-		
-		public ActionResult Index()
-        {
-            return View();
-        }
+			
 		public ActionResult Details(int id)
 		{
 			var product = db.Product.Find(id);
 			return View(product);
-		}
-		public ActionResult AddToShoppingCart(int id)
-		{
-			return View();
-		}
+		}		
 	}
 }

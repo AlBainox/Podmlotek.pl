@@ -1,4 +1,6 @@
-﻿using Podmlotek.Migrations;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Podmlotek.Migrations;
 using Podmlotek.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +13,7 @@ namespace Podmlotek
 {
 	public class Initializer : MigrateDatabaseToLatestVersion<Context, Configuration>
 	{
-		
+
 		public static void SeedProductData(Context context)
 		{
 			var categories = new List<Categories>
@@ -88,77 +90,111 @@ namespace Podmlotek
 				new Subcategories() { SubcategoriesId=55, CategoriesId=7, Name= "Pozostałe"},
 				new Subcategories() { SubcategoriesId=56, CategoriesId=8, Name= "Produkty spożywcze"},
 				new Subcategories() { SubcategoriesId=57, CategoriesId=8, Name= "Artykuły dla zwierząt"},
-				new Subcategories() { SubcategoriesId=58, CategoriesId=8, Name= "Utrzymanie czystości"},			
-				
+				new Subcategories() { SubcategoriesId=58, CategoriesId=8, Name= "Utrzymanie czystości"},
+
 			};
 			subcategories.ForEach(s => context.Subcategory.AddOrUpdate(s));
 			context.SaveChanges();
 
-			Users admin = new Users
-			{
-				UsersId = 1,				
-				Name = "admin",
-				Surname = "admin",
-				Address = "admin",
-				Email = "admin@admin.pl",
-				Phone = 989898989,
-				PostalCode = "98-762",
-				Password = "admin",
-				ConfirmPassword= "admin",
-				role = Role.Admin,
-			};
-
-			context.User.AddOrUpdate(admin);
-			context.SaveChanges();
 
 			var product = new List<Products>
 			{
 				new Products() {
 				ProductsId=1,
 				DateAdded=DateTime.Now,
-				UsersId=1,
-				Bestseller=true,				
+				Bestseller=true,
 				Description="Rower miał przejechane 300km gdy wpadł w moje ręce, ja przejechałem 196km. Opony mają przejechane około 200-300 METRÓW (tylko testowo) - wymieniłem na nowe, zgodne z oryginalną specyfikacją. Napęd w stanie idealnym, zadbany od pierwszego kilometra.",
 				Hidden= false,
 				Item= "Rower szosowy",
 				Picture= "rower.png",
-				Price= 5000,			    
+				Price= 5000,
 				ShortDescription= "Rower szosowy Scultura Disc 400 z ROCZNĄ gwarancją (do 09.2020r.).",
-				SubcategoriesId= 48,			
-				Users= admin },
+				SubcategoriesId= 48,
+				},
 
 				 new Products(){
 				 ProductsId=2,
 				 DateAdded= DateTime.Now,
-				 UsersId=1,
-				 Bestseller=true,				 
+				 Bestseller=true,
 				 Description= "Stan telefonu jest dobry, tzn. na obudowie są ryski i zadrapania, wyświetlacz też ma lekkie ślady od noszenia w kieszeni. Nie stanowi to jednak problemu w codziennym użytkowaniu, ponieważ tego zwyczajnie nie widać / trzeba się temu mocno przyjrzeć. Telefon jest sprawny, lecz ma drobny mankament; bateria kwalifikuje się do wymiany. Obecnie to jakieś 30-40 % pojemności fabrycznej. Można to zrobić w popularnej sieci sklepów praktycznie od ręki za niedużą kwotę. Wspomnę jeszcze, że gniazdo micro usb nie jest tak ścisłe i zwarte jak od nowości, tzn. z oryginalnymi ładowarkami Samsung nie ma żadnego problemu, lecz z tańszymi zamiennikami może czasem nie stykać.",
 				 Hidden=false,
 				 Item= "Samsung Galaxy S6",
 				 Picture="telefon.png",
-				 Price=600,				 
+				 Price=600,
 				 ShortDescription="Sprzedam jeden z moich najlepszych telefonów z jakimi miałem w ogóle styczność. Służył mi przez 3 lata i nigdy nie zawiódł.",
-				 SubcategoriesId=9,				 
-				 Users=admin },
-				 
+				 SubcategoriesId=9
+				 },
+
 				 new Products() {
 				 ProductsId=3,
 				 DateAdded=DateTime.Now,
-				 UsersId=1,
-				 Bestseller=true,				
+				 Bestseller=true,
 				 Description="Seria Lenovo ThinkPad T stanowi kompletną linię innowacyjnych, cienkich oraz lekkich notebooków i została zaprojektowana w celu zwiększenia wydajności oraz trwałości. Notebooki ThinkPad serii T wyposażone są w technologię firmy Intel z całą gamą jej zalet.",
 				 Hidden=false,
 				 Item="Laptop Lenovo",
 				 Picture="laptop.jpg",
-				 Price=1000,				 
+				 Price=1000,
 				 ShortDescription="Lenovo ThinkPad T430 został zaprojektowany z użyciem technologii Lenovo Enhanced Experience dla Windows 7",
-				 SubcategoriesId=10,				 
-				 Users=admin,
+				 SubcategoriesId=10,
 				 }
 			};
 			product.ForEach(p => context.Product.AddOrUpdate(p));
 			context.SaveChanges();
+		}
+		public static void SeedUser(Context db)
+		{
+			var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+			var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
+			const string name = "admin@admin.pl";
+			const string password = "Admin12!@";
+			const string roleName = "Admin";
+
+			const string roleUser = "User";
+			const string nameOfUser = "tomek@wp.pl";
+			const string userPassword = "Tomek12!@";
+
+			var admin = userManager.FindByName(name);
+			if (admin == null)
+			{
+				admin = new ApplicationUser { UserName = name, Email = name, UserData = new UserData() };
+				var result = userManager.Create(admin, password);
+			}
+			var user = userManager.FindByName(nameOfUser);
+			if (user == null)
+			{
+				user = new ApplicationUser { UserName = nameOfUser, Email = nameOfUser, UserData = new UserData() };
+				var result = userManager.Create(user, userPassword);
+			}
+
+			// utworzenie roli Admin jeśli nie istnieje 
+			var role = roleManager.FindByName(roleName);
+			if (role == null)
+			{
+				role = new IdentityRole(roleName);
+				var roleresult = roleManager.Create(role);
+			}
+
+			// utworzenie roli User jeśli nie istnieje
+			var userRole = roleManager.FindByName(roleUser);
+			if (userRole == null)
+			{
+				role = new IdentityRole(roleUser);
+				var roleresult = roleManager.Create(role);
+			}
+
+			// dodanie uzytkownika do roli User jesli juz nie jest w roli
+			var rolesForUser = userManager.GetRoles(user.Id);
+			if (!rolesForUser.Contains(role.Name))
+			{
+				var result = userManager.AddToRole(user.Id, role.Name);
+			}
+			// dodanie uzytkownika do roli Admin jesli juz nie jest w roli
+			var rolesForAdmin = userManager.GetRoles(admin.Id);
+			if (!rolesForUser.Contains(role.Name))
+			{
+				var result = userManager.AddToRole(admin.Id, role.Name);
+			}
 		}
 	}
 }

@@ -8,13 +8,13 @@ namespace Podmlotek.Models
 {
 	public class UserData
 	{
-		public string Imie { get; set; }
-		public string Nazwisko { get; set; }
+		public string Name { get; set; }
+		public string LastName { get; set; }
 		public string Adres { get; set; }
-		public string Miasto { get; set; }
-		public string KodPocztowy { get; set; }
+		public string City { get; set; }
+		public string PostalCode { get; set; }
 		[RegularExpression(@"(\+\d{2})*[\d\s-]+", ErrorMessage = "Błędny format numeru telefonu.")]
-		public string Telefon { get; set; }
+		public string Phone { get; set; }
 
 		[EmailAddress(ErrorMessage = "Błędny format adresu e-mail.")]
 		public string Email { get; set; }

@@ -23,7 +23,7 @@
 							Cena: <span> @Model.Price zł</span>
 						</div>
 						<div>
-							<a class="orderButton" href="@Url.Action("AddToShoppingCart", "Product", new { id = Model.ProductsId })">
+							<a class="orderButton" href="@Url.Action("AddTo", "ShoppingCart", new { id = Model.ProductsId })">
 								Dodaj do koszyka
 							</a>
 						</div>

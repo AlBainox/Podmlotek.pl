@@ -25,7 +25,7 @@
 
 		<div id="pasek">
 			@Html.Partial("_LoginPartial")
-			<a class="MainBtns" style="border-left: 1px dashed #02a24b;" href="#">Koszyk</a>
+			<a class="MainBtns" style="border-left: 1px dashed #02a24b;" href="@Url.Action("Index", "ShoppingCart")">Koszyk</a>
 		</div>
 		<div>
 			<a style="text-decoration:none" href="@Url.Action("Index","Home")">

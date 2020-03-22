@@ -314,15 +314,15 @@ h1.h1 {
 	height: 250px;
 	border: 1px dashed orange;
 	margin-left: 150px;
-	margin-top: 75px;
-	text-align: -moz-center;
+	margin-top: 75px;	
 }
 	.ProductItem > img {
 		height: 100%;		
 	}
 .ProductList {
-	margin-left: auto;
-	margin-right: auto;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	
 }
 nav.SubcategoryList {	
 	font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
@@ -368,12 +368,16 @@ nav.SubcategoryList {
 	float: left;
 }
 .line {
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	
 }
 .inscription {
 	color: #dddddd;
 	margin-top: 20px;
+	text-align: center;
 }
 
 .orderButton {
@@ -441,3 +445,41 @@ ul.item {
 	color: #1c74b2;
 	text-decoration: none;	
 }
+.shoppingCart {
+	margin: 50px;
+	height: 1500px;
+	display: inline-block;
+}
+.totalPrice {
+	margin-left: 750px;
+	margin-top: 25px;
+	margin-bottom:15px;
+	float: right;
+}
+.payButton {
+	height: 40px;
+	background-color: #CD7F32;
+	color: #dfdfdf;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 38px;
+	padding: 2px 15px 2px 15px;
+	text-align: center;
+	width: 930px;
+	float: right;
+}
+.summary {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.itemsSummary {
+	float: left;
+	width: 800px;
+	height: 250px;
+	border: 1px dashed orange;
+	margin-top: 75px;
+	margin-left: 131px;
+}
+	.itemsSummary > img {
+		height: 100%;
+	}

@@ -36,7 +36,7 @@
 									<p>Cena: @item.Price zł</p>
 								</div>
 							</a>
-							<a class="AddTo" href="@Url.Action("AddToShoppingCart", "Product", new { id = item.ProductsId })">	Dodaj do koszyka</a>
+							<a class="AddTo" href="@Url.Action("AddTo", "ShoppingCart", new { id = item.ProductsId })">	Dodaj do koszyka</a>
 
 						</section>
 					</li>

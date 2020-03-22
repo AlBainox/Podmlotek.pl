@@ -84,7 +84,7 @@ namespace Podmlotek.Infrastructure
 		{
 			var shoppingCart = GetShoppingCart();
 			newOrder.OrderDate = DateTime.Now;
-			newOrder.UsersId = userId;
+			newOrder.UserId = userId;
 
 			if (newOrder.OrderItem==null)
 			{
