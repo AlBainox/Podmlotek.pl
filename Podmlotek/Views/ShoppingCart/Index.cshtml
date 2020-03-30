@@ -21,6 +21,7 @@
 									<p>Kwota: @item.OrderValue zł Ilość: @item.Pieces</p>
 								</div>
 							</a>
+							<a class="AddTo" @*href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { id = item.Product.ProductsId })"*@> Usuń z koszyka </a>
 						</section>
 					</li>
 				}
@@ -29,7 +30,7 @@
 			<hr class="line" />
 			<div class="summary">
 				<div class="totalPrice"> Razem: @Model.TotalPrice zł</div>
-				<div class="payButton"> Zapłać</div>
+				<a class="payButton" href="@Url.Action("Pay", "ShoppingCart")"> Zapłać</a>
 			</div>
 		</div>
 	</div>

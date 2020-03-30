@@ -72,13 +72,13 @@ namespace Podmlotek.Controllers
 				var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 				var order = new Orders
 				{
-					Imie = user.UserData.Name,
-					Nazwisko = user.UserData.LastName,
+					Imie = user.UserData.Imie,
+					Nazwisko = user.UserData.Nazwisko,
 					Adres = user.UserData.Adres,
-					Miasto = user.UserData.City,
-					KodPocztowy = user.UserData.PostalCode,
+					Miasto = user.UserData.Miasto,
+					KodPocztowy = user.UserData.KodPocztowy,
 					Email = user.UserData.Email,
-					Telefon = user.UserData.Phone
+					Telefon = user.UserData.Telefon
 				};
 				return View(order);
 			}
@@ -98,7 +98,7 @@ namespace Podmlotek.Controllers
 				TryUpdateModel(user.UserData);
 				await UserManager.UpdateAsync(user);
 				scm.EmptyShoppingCart();
-				return RedirectToAction("Potwierdzenie zamówienia");
+				return RedirectToAction("OrderConfirmation");
 			}
 			return View();
 		}

@@ -27,7 +27,10 @@ namespace Podmlotek.Models
 		[Required(ErrorMessage = "kod pocztowy")]
 		[StringLength(6)]
 		public string KodPocztowy { get; set; }
+		[Required(ErrorMessage = "Wprowadz telefon")]
 		public string Telefon { get; set; }
+		[Required(ErrorMessage = "Wprowadź swój adres e-mail.")]
+		[EmailAddress(ErrorMessage = "Błędny format adresu e-mail.")]
 		public string Email { get; set; }
 		public string Komentarz { get; set; }
 		public DateTime OrderDate { get; set; }

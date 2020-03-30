@@ -450,6 +450,9 @@ ul.item {
 	height: 1500px;
 	display: inline-block;
 }
+.submitOrder {
+	padding: 50px;
+}
 .totalPrice {
 	margin-left: 750px;
 	margin-top: 25px;
@@ -467,6 +470,7 @@ ul.item {
 	text-align: center;
 	width: 930px;
 	float: right;
+	text-decoration: none;
 }
 .summary {
 	margin-left: 100px;
